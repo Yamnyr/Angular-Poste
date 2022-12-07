@@ -1,0 +1,28 @@
+
+<h1 class='center'>Liste des postes de travail</h1>
+
+<table class="bordered striped">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>Cn</th>
+    <th>Fabricant</th>
+    <th>Model</th>
+    <th>Date de garantie</th>
+    <th>Détails</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor='let poste of posteList'>
+    <td>{{ poste.id }}</td>
+    <td>{{ poste.cn }}</td>
+    <td>{{ poste.fabricant | uppercase }}</td>
+    <td>{{ poste.model }}</td>
+    <td>{{ poste.GarantyDate | date:'dd/MM/YYYY' }}</td>
+    <td>
+      <a href="poste/{{poste.id}}">
+        <i class="medium material-icons">insert_chart</i></a>
+    </td>
+  </tr>
+  </tbody>

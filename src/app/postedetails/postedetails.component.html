@@ -1,0 +1,59 @@
+<h1 class='center'>Détails du Poste</h1>
+<div *ngIf="poste" class="row">
+  <div class="col s12 m8 offset-m2">
+    <div class="card horizontal hoverable">
+      <div class="card-image">
+        <img [src]="poste.picture">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <table class="bordered striped">
+            <tbody>
+            <tr>
+              <td>CN</td>
+              <td><strong>{{ poste.cn }}</strong></td>
+            </tr>
+            <tr>
+              <td>Fabricant</td>
+              <td><strong>{{ poste.fabricant }}</strong></td>
+            </tr>
+            <tr>
+              <td>Model</td>
+              <td><strong>{{ poste.model }}</strong></td>
+            </tr>
+            <tr>
+              <td>ServiceTag</td>
+              <td><strong>{{ poste.serviceTag }}</strong></td>
+            </tr>
+            <tr>
+              <td>Site</td>
+              <td><strong>{{ poste.site }}</strong></td>
+            </tr>
+            <tr>
+              <td>bâtiment</td>
+              <td><strong>{{ poste.bat }}</strong></td>
+            </tr>
+            <tr>
+              <td>Salle</td>
+              <td><strong>{{ poste.salle }}</strong></td>
+            </tr>
+            <tr>
+              <td>Date de Garantie</td>
+              <td><em>{{ poste.GarantyDate | date:"dd/MM/yyyy" }}</em></td>
+            </tr>
+            <tr>
+              <td>Date de création</td>
+              <td><em>{{ poste.CreationDate | date:"dd/MM/yyyy" }}</em></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-action">
+          <a (click)="goComposantListPoste()">Retour</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h4 *ngIf='!poste' class="center">Aucun pokémon à afficher !</h4>
+
